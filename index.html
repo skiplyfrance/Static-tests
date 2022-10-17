@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const status = urlParams.get('status')
+
+        window.onload = function() {
+            const celement = document.getElementById("content")
+            var bcolor = "red"
+            if (status == "1") {
+                celement.innerHTML = "You are out!";
+            } else if (status == "2") {
+                celement.innerHTML = "You are in!";
+                bcolor = "green"
+            }
+            document.getElementById("cbody").style['background-color'] = bcolor;
+        }
+
+    </script>
+</head>
+<body id="cbody">
+    <div id="content" style='font-size: 3em; color: white; text-align: center; margin-top: 3em; font-weight: bold;'>
+        Waiting for status
+    </div>
+</body>
+
+</html>
+
+
